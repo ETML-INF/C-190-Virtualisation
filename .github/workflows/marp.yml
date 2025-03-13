@@ -55,8 +55,8 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add public/*.html public/*.pdf
-          git commit -m "Auto-generate all MARP presentations"
+          git add public/*
+          git commit -m "Auto-generate all MARP presentations" || echo "No changes to commit"
           git push
         continue-on-error: true
 
@@ -68,13 +68,8 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup GitHub Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload Presentations to GitHub Pages
-        uses: actions/upload-pages-artifact@v2
+      - name: Deploy to GitHub Pages from `public/`
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          path: public  # On publie tout ce qui est dans `public/`
-
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v3
+          branch: main  # Déploie sur la branche `main`
+          folder: public  # Spécifie le dossier `public/` comme racine du site
