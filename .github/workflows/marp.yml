@@ -30,13 +30,25 @@ jobs:
           npm install -g @marp-team/marp-cli
           npm install puppeteer
 
-      - name: Generate Presentations (HTML + PDF) and Copy Images
+      - name: Generate Presentations (HTML + PDF) and Copy Resources
         run: |
+          echo "✅ Création des dossiers..."
           mkdir -p public/img
-          cp -r b-UnitesEnseignement/Support/img/* public/img/ || echo "No images found"
-
           mkdir -p public/exercices
-          cp b-UnitesEnseignement/Exercices/*.pdf public/exercices/ || echo "No exercises found"
+
+          echo "🔍 Vérification des fichiers avant la copie..."
+          ls -l b-UnitesEnseignement/Support/img/ || echo "📂 Aucune image trouvée"
+          ls -l b-UnitesEnseignement/Exercices/ || echo "📂 Aucun exercice trouvé"
+
+          echo "📂 Copie des images..."
+          cp -r b-UnitesEnseignement/Support/img/* public/img/ 2>/dev/null || echo "⚠️ Aucune image copiée"
+
+          echo "📂 Copie des exercices PDF..."
+          cp b-UnitesEnseignement/Exercices/*.pdf public/exercices/ 2>/dev/null || echo "⚠️ Aucun exercice PDF copié"
+
+          echo "✅ Contenu final de public/"
+          ls -l public/
+          ls -l public/exercices/
 
           echo "<!DOCTYPE html>
           <html lang='fr'>
