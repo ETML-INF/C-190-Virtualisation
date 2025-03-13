@@ -12,9 +12,12 @@ Le module **ICT 190 - Virtualisation des Serveurs** a pour objectif d'enseigner 
 
 Ce module se compose d'une partie théorique et d'un projet pratique réalisé en groupe.
 
-## Contenu du module
+# Contenu du module
+La théorie se trouve ici :
 
-### 1. Intro-Théorie (10p)
+https://etml-inf.github.io/C-190-Virtualisation/
+
+## 1. Intro-Théorie (10p)
 
 - **Introduction**
 - **Historique**
@@ -28,11 +31,9 @@ Ce module se compose d'une partie théorique et d'un projet pratique réalisé e
 - **Virtualisation de Réseaux**
 - **Virtualisation de Stockage**
 
+## 2. VMWare (30p)
 
-
-### 2. VMWare (30p)
-
-#### Semaine 2 : Introduction VMWare
+### Semaine 2 : Introduction VMWare
 - **Historique**
 - **Produits VMWare**
   - ESXi
@@ -46,14 +47,14 @@ Ce module se compose d'une partie théorique et d'un projet pratique réalisé e
   - Serveur ESXi
   - Client VSphere
 
-#### Semaine 3 : Installation et Configuration
+### Semaine 3 : Installation et Configuration
 - **Installation VCenter**
   - Fonctionnalités
   - Utilité de VmTools
 - **Configuration VCenter**
   - HA et DSR
 
-#### Semaine 4 : Gestion des Infrastructures
+### Semaine 4 : Gestion des Infrastructures
 - **Impacts**
 - **Coûts**
 - **Licences**
@@ -69,7 +70,7 @@ Ce module se compose d'une partie théorique et d'un projet pratique réalisé e
   - Clonage
   - Snapshot
 
-#### Semaine 5 : Gestion des Machines Virtuelles
+### Semaine 5 : Gestion des Machines Virtuelles
 - Gestion des VM
   - Snapshot
   - Migration à chaud
@@ -78,13 +79,15 @@ Ce module se compose d'une partie théorique et d'un projet pratique réalisé e
   - Alarmes
   - Planification des tâches
 
-### 3. Projet P_SYS-190 - HyperV
+
+## 3. Projet P_SYS-190 - HyperV
 Le projet se déroulera sur 3 semaines. Les semaines 6 à 8.
 C'est un projet pratique sur HyperV qui se déroulera seul ou en groupe de 2.
 
 Le projet est disponible sur la marketplace. "*Mise en place d’une infrastructure virtualisée avec Windows Server Hyper-V*" 
 
-## Évaluation du Module
+
+# Évaluation du Module
 
 L'évaluation du module est composée de deux parties :
 
@@ -99,7 +102,8 @@ la même pour le groupe. Une pénalité, allant jusqu’à 1 point sur la note d
 Ce document vous sera remis au début de chaque exercice, et sera rendu à la fin de celui-ci. Il devra être le plus précis possible, pour bien montrer les paramètres, les configurations correspondent bien à ce qui est attendu.
 
 
-## Organisation du module
+
+# Organisation du module
 
 Le module se déroulera sur **8 semaines**, avec une alternance entre théorie et pratique.
 
@@ -112,6 +116,7 @@ Le module se déroulera sur **8 semaines**, avec une alternance entre théorie e
 | 5 | VmWare + E08 & 09 + **EVAL 02** + Rapport de validation |
 | 6-8 | Projet P_SYS-190 sur HyperV |
 
-## Conclusion
+
+# Conclusion
 
 Le module ICT-190 permet aux étudiants d'acquérir des compétences essentielles en virtualisation et en gestion de plateformes virtualisées. La combinaison de théorie, pratique et projet final assure une compréhension approfondie et une application concrète des concepts abordés.
