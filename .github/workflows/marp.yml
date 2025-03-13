@@ -5,7 +5,7 @@ on:
     paths:
       - 'b-UnitesEnseignement/Support/*.md'  
       - 'b-UnitesEnseignement/Support/img/**'  
-      - 'b-UnitesEnseignement/Exercices/*.pdf'  # Ajout pour détecter les nouveaux exercices PDF
+      - 'b-UnitesEnseignement/Exercices/*.pdf'  
   pull_request:
     paths:
       - 'b-UnitesEnseignement/Support/*.md'
@@ -35,6 +35,9 @@ jobs:
           mkdir -p public/img
           cp -r b-UnitesEnseignement/Support/img/* public/img/ || echo "No images found"
 
+          mkdir -p public/exercices
+          cp b-UnitesEnseignement/Exercices/*.pdf public/exercices/ || echo "No exercises found"
+
           echo "<!DOCTYPE html>
           <html lang='fr'>
           <head>
@@ -62,15 +65,15 @@ jobs:
 
           echo "</ul>" >> public/index.html
 
-          # Ajouter la section "Liste des Exercices"
+          # Ajout de la section "Liste des Exercices"
           echo "<h2 class='text-2xl font-bold mt-8 text-center'>Liste des Exercices</h2>
                 <ul class='space-y-3'>" >> public/index.html
 
-          for file in b-UnitesEnseignement/Exercices/*.pdf; do
+          for file in public/exercices/*.pdf; do
             filename=$(basename "$file")
 
             echo "<li class='bg-gray-800 p-4 rounded-lg'>
-                    <a href='${filename}' class='text-yellow-400 hover:underline font-bold'>📘 ${filename} (PDF)</a>
+                    <a href='exercices/${filename}' class='text-yellow-400 hover:underline font-bold'>📘 ${filename} (PDF)</a>
                   </li>" >> public/index.html
           done
 
