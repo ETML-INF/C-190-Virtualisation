@@ -1,12 +1,12 @@
-name: Build and Deploy MARP Presentation
+name: Build and Deploy All MARP Presentations
 
 on:
   push:
     paths:
-      - 'b-UnitesEnseignement/Support/S-190-Introduction.md'
+      - 'b-UnitesEnseignement/Support/*.md'  # Déclencheur : tout fichier .md dans le dossier Support
   pull_request:
     paths:
-      - 'b-UnitesEnseignement/Support/S-190-Introduction.md'
+      - 'b-UnitesEnseignement/Support/*.md'
 
 jobs:
   build:
@@ -21,18 +21,42 @@ jobs:
           npm install -g @marp-team/marp-cli
           npm install puppeteer  # Nécessaire pour le rendu PDF
 
-      - name: Generate HTML Presentation
-        run: marp b-UnitesEnseignement/Support/S-190-Introduction.md --html --output b-UnitesEnseignement/Support/S-190-Introduction.html
+      - name: Generate Presentations (HTML + PDF)
+        run: |
+          mkdir -p public
+          echo "<!DOCTYPE html>
+          <html>
+          <head>
+            <meta charset='UTF-8'>
+            <title>Liste des Présentations</title>
+            <style>
+              body { font-family: Arial, sans-serif; padding: 20px; }
+              h1 { color: #333; }
+              ul { list-style-type: none; padding: 0; }
+              li { margin-bottom: 10px; }
+              a { text-decoration: none; color: #007bff; }
+              a:hover { text-decoration: underline; }
+            </style>
+          </head>
+          <body>
+            <h1>Liste des Présentations</h1>
+            <ul>" > public/index.html
 
-      - name: Generate PDF Presentation (with local images)
-        run: marp b-UnitesEnseignement/Support/S-190-Introduction.md --pdf --allow-local-files --output b-UnitesEnseignement/Support/S-190-Introduction.pdf
+          for file in b-UnitesEnseignement/Support/*.md; do
+            filename=$(basename "$file" .md)
+            marp "$file" --html --output "public/${filename}.html"
+            marp "$file" --pdf --allow-local-files --output "public/${filename}.pdf"
+            echo "<li><a href='${filename}.html'>${filename} (HTML)</a> | <a href='${filename}.pdf'>${filename} (PDF)</a></li>" >> public/index.html
+          done
+
+          echo "</ul></body></html>" >> public/index.html
 
       - name: Commit and Push Outputs
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add b-UnitesEnseignement/Support/S-190-Introduction.html b-UnitesEnseignement/Support/S-190-Introduction.pdf
-          git commit -m "Auto-generate MARP presentation"
+          git add public/*.html public/*.pdf
+          git commit -m "Auto-generate all MARP presentations"
           git push
         continue-on-error: true
 
@@ -47,10 +71,10 @@ jobs:
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v4
 
-      - name: Upload Presentation to GitHub Pages
+      - name: Upload Presentations to GitHub Pages
         uses: actions/upload-pages-artifact@v2
         with:
-          path: b-UnitesEnseignement/Support/
+          path: public  # On publie tout ce qui est dans `public/`
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v3
