@@ -132,9 +132,10 @@ La virtualisation consiste à créer une version virtuelle (plutôt que réelle/
 ---
 <!-- header: "C190 - La virtualisation > Sources" -->
 # Sources
+## Web
 - https://fr.wikipedia.org/wiki/Virtualisation
 
-# Images 
+## Images 
 - https://fr.wikipedia.org/wiki/Virtualisation
 - https://commons.wikimedia.org/wiki/File:Docker-containerized-and-vm-transparent-bg.png
 
