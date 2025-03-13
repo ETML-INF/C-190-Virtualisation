@@ -25,31 +25,33 @@ jobs:
         run: |
           mkdir -p public
           echo "<!DOCTYPE html>
-          <html>
+          <html lang='fr'>
           <head>
             <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
             <title>Liste des Présentations</title>
-            <style>
-              body { font-family: Arial, sans-serif; padding: 20px; }
-              h1 { color: #333; }
-              ul { list-style-type: none; padding: 0; }
-              li { margin-bottom: 10px; }
-              a { text-decoration: none; color: #007bff; }
-              a:hover { text-decoration: underline; }
-            </style>
+            <script src='https://cdn.tailwindcss.com'></script>
           </head>
-          <body>
-            <h1>Liste des Présentations</h1>
-            <ul>" > public/index.html
+          <body class='bg-gray-900 text-white font-sans p-6'>
+            <div class='max-w-4xl mx-auto'>
+              <h1 class='text-3xl font-bold mb-4 text-center'>Liste des Présentations</h1>
+              <ul class='space-y-3'>" > public/index.html
 
           for file in b-UnitesEnseignement/Support/*.md; do
             filename=$(basename "$file" .md)
             marp "$file" --html --output "public/${filename}.html"
             marp "$file" --pdf --allow-local-files --output "public/${filename}.pdf"
-            echo "<li><a href='${filename}.html'>${filename} (HTML)</a> | <a href='${filename}.pdf'>${filename} (PDF)</a></li>" >> public/index.html
+            echo "<li class='bg-gray-800 p-4 rounded-lg'>
+                    <a href='${filename}.html' class='text-blue-400 hover:underline font-bold'>📄 ${filename} (HTML)</a> |
+                    <a href='${filename}.pdf' class='text-green-400 hover:underline font-bold'>📕 ${filename} (PDF)</a>
+                  </li>" >> public/index.html
           done
 
-          echo "</ul></body></html>" >> public/index.html
+          echo "</ul>
+                <p class='mt-6 text-center text-sm text-gray-400'>Généré automatiquement avec MARP et TailwindCSS</p>
+                </div>
+              </body>
+            </html>" >> public/index.html
 
       - name: Commit and Push Outputs
         run: |
