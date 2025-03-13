@@ -1,4 +1,4 @@
-name: Build MARP Presentation
+name: Build and Deploy MARP Presentation
 
 on:
   push:
@@ -16,14 +16,16 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Install MARP CLI
-        run: npm install -g @marp-team/marp-cli
+      - name: Install Node.js and MARP CLI
+        run: |
+          npm install -g @marp-team/marp-cli
+          npm install puppeteer  # Nécessaire pour le rendu PDF
 
       - name: Generate HTML Presentation
         run: marp b-UnitesEnseignement/Support/S-190-Introduction.md --html --output b-UnitesEnseignement/Support/S-190-Introduction.html
 
-      - name: Generate PDF Presentation
-        run: marp b-UnitesEnseignement/Support/S-190-Introduction.md --pdf --output b-UnitesEnseignement/Support/S-190-Introduction.pdf
+      - name: Generate PDF Presentation (with local images)
+        run: marp b-UnitesEnseignement/Support/S-190-Introduction.md --pdf --allow-local-files --output b-UnitesEnseignement/Support/S-190-Introduction.pdf
 
       - name: Commit and Push Outputs
         run: |
@@ -32,3 +34,23 @@ jobs:
           git add b-UnitesEnseignement/Support/S-190-Introduction.html b-UnitesEnseignement/Support/S-190-Introduction.pdf
           git commit -m "Auto-generate MARP presentation"
           git push
+        continue-on-error: true
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload Presentation to GitHub Pages
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: b-UnitesEnseignement/Support/
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v3
