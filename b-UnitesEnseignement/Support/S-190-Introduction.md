@@ -130,7 +130,7 @@ La virtualisation consiste à créer une version virtuelle (plutôt que réelle/
 - **Exemples** : VMware vSAN, Microsoft Storage Spaces, NetApp ONTAP.
 
 ---
-<!-- header: "Sources" -->
+<!-- header: "C190 > Sources" -->
 # Sources
 - https://fr.wikipedia.org/wiki/Virtualisation
 
