@@ -1,7 +1,5 @@
 # Module C-190 - Mettre en place et exploiter une plateforme de virtualisation
 
-🔗 https://etml-inf.github.io/C-190-Virtualisation/
-
 ## Introduction
 
 Le module **C-190 - Virtualisation des Serveurs** a pour objectif d'enseigner aux étudiants la mise en place d’un environnement virtuel. À l’issue de ce module, les élèves seront capables de :
@@ -32,12 +30,10 @@ Le module se déroulera sur **8 à 9 semaines**, avec une alternance entre théo
 | 9 | **Rendu du projet P_SYS-190** </br> Remettre network LABO en état </br> Supprimer VMs chez prestataire. |❌|
 > ℹ️ ~~Ce planning peut être amené à changer.~~ Ce planning va très probablement bouger un peu. 
 
-
+**Vue web de la théorie et des exercices :**
+🔗 https://etml-inf.github.io/C-190-Virtualisation/
 
 # Contenu du module
-La théorie ainsi que les exercices se trouvent ici :
-
-🔗 https://etml-inf.github.io/C-190-Virtualisation/
 
 ## 1. Intro-Théorie (10p)
 
