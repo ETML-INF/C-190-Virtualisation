@@ -45,7 +45,7 @@ _(Donnez au moins 2 avantages)_
 ## 2️⃣ Questions à Choix Multiples (QCM)
 
 ### ❓ 6. Quels sont les 3 postulats de Popek et Goldberg sur la virtualisation ?  
-_(Cochez les 3 bonnes réponses)_
+
 - [ ] L'équivalence  
 - [ ] Le contrôle des ressources  
 - [ ] L'efficacité  
@@ -54,7 +54,7 @@ _(Cochez les 3 bonnes réponses)_
 ---
 
 ### ❓ 7. Un hyperviseur de type 1 :
-_(Cochez les affirmations correctes)_
+
 - [ ] S’exécute directement sur le matériel sans OS hôte  
 - [ ] Nécessite un OS hôte pour fonctionner  
 - [ ] Est utilisé uniquement sur les ordinateurs personnels  
@@ -63,7 +63,7 @@ _(Cochez les affirmations correctes)_
 ---
 
 ### ❓ 8. Un hyperviseur de type 2 :
-_(Cochez les affirmations correctes)_
+
 - [ ] Est plus performant qu’un hyperviseur de type 1  
 - [ ] Fonctionne au-dessus d’un OS hôte  
 - [ ] Peut être VMware Workstation ou VirtualBox  
@@ -72,7 +72,7 @@ _(Cochez les affirmations correctes)_
 ---
 
 ### ❓ 9. La virtualisation par container :
-_(Cochez les affirmations correctes)_
+
 - [ ] Utilise un seul noyau système partagé entre les conteneurs  
 - [ ] Est plus légère que la virtualisation classique  
 - [ ] Nécessite un hyperviseur dédié  
@@ -81,7 +81,7 @@ _(Cochez les affirmations correctes)_
 ---
 
 ### ❓ 10. Quels sont les avantages du Cloud Computing ?  
-_(Cochez les affirmations correctes)_
+
 - [ ] Accès à des ressources à la demande via Internet  
 - [ ] Permet uniquement d'héberger des sites web  
 - [ ] Réduction des coûts grâce à la mutualisation des infrastructures  

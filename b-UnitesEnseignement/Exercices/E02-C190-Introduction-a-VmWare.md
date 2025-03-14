@@ -25,7 +25,7 @@ _(Réponse développée, minimum 3 lignes)_
 ## 2️⃣ Questions à Choix Multiples (QCM)
 
 ### ❓ 3. Parmi les affirmations suivantes, lesquelles sont correctes ?  
-_(Cochez les affirmations correctes)_
+
 
 - [ ] La virtualisation est une nouvelle technologie qui a eu son origine dans le cloud computing  
 - [ ] La virtualisation est une technologie ancienne qui a son origine dans les environnements mainframe  
@@ -36,7 +36,7 @@ _(Cochez les affirmations correctes)_
 ---
 
 ### ❓ 4. Quelles ressources peuvent être virtualisées ?  
-_(Cochez les bonnes réponses)_
+
 
 - [ ] Stockage  
 - [ ] Processeur  
@@ -46,7 +46,7 @@ _(Cochez les bonnes réponses)_
 ---
 
 ### ❓ 5. Quel est l'encombrement de l'image de l'hyperviseur ESXi 7.0 ?  
-_(Cochez la bonne réponse)_
+
 
 - [ ] 100 Mo  
 - [ ] 150 Mo  
@@ -56,7 +56,7 @@ _(Cochez la bonne réponse)_
 ---
 
 ### ❓ 6. Quel est le type d'hyperviseur ESXi ?  
-_(Cochez la bonne réponse)_
+
 
 - [ ] Type 1 - bare metal  
 - [ ] Type 2 - host based  
@@ -64,7 +64,7 @@ _(Cochez la bonne réponse)_
 ---
 
 ### ❓ 7. Quelle fonctionnalité permet de faire une migration à chaud ?  
-_(Cochez les bonnes réponses)_
+
 
 - [ ] Storage vMotion  
 - [ ] DRS  
@@ -74,7 +74,7 @@ _(Cochez les bonnes réponses)_
 ---
 
 ### ❓ 8. Quel est le but de l'option Thin Provisioning ?  
-_(Cochez la bonne réponse)_
+
 
 - [ ] Pouvoir récupérer les données plus facilement  
 - [ ] Assurer une allocation dynamique de la capacité du stockage partagé  
@@ -83,7 +83,7 @@ _(Cochez la bonne réponse)_
 ---
 
 ### ❓ 9. Comment fonctionne le cluster vCenter HA ?  
-_(Cochez les affirmations correctes)_
+
 
 - [ ] Il suffit de choisir le bon paramètre de configuration dans l'interface client  
 - [ ] Il faut 3 instances du vCenter Server  
