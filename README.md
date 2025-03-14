@@ -26,6 +26,7 @@ Le module se déroulera sur **8 à 9 semaines**, avec une alternance entre théo
 | 2 | Explication Infra ETML et prestataire </br> E03-Th + E03-Pra (Installation ESXi Physique & Nested) </br> **Rapport de validation E03**  |❌|
 | 3 | E04-Th + E04-Pra (Installation vCenter) </br> E05-Th + E05-Pra </br> **Rapport de validation E04** </br>  **Rapport de validation E05** </br> ⚠️ **EVAL 01** |❌|
 | 4 | E06 + E06-EtudeCout </br> E07-Th + E07-Pra </br> **Rapport de validation E07** |❌|
+| 🏖️ | <img src="./b-UnitesEnseignement/Support/img/im-on-vacation-danny-mullen.gif" width="100" height="100"> |🏖️|
 | 5 | E08-Pra </br> ⚠️ **EVAL 02** </br> |❌|
 | 6-8 | Projet P_SYS-190 sur HyperV |❌|
 | 9 | **Rendu du projet P_SYS-190** </br> Remettre network LABO en état </br> Supprimer VMs chez prestataire. |❌|
