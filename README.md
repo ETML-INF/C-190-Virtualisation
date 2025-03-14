@@ -7,8 +7,7 @@ Le module **C-190 - Virtualisation des Serveurs** a pour objectif d'enseigner au
 - Installer et configurer des serveurs virtuels VMware.
 - Comprendre les implications métiers de la virtualisation.
 
-
-![theorie-pratique](./b-UnitesEnseignement/Support/img/Picture1.png)
+<img src="./b-UnitesEnseignement/Support/img/Picture1.png" width="auto" height="200">
 
 Ce module se compose **d'une partie théorique** et **d'un projet pratique** réalisé en groupe.
 
