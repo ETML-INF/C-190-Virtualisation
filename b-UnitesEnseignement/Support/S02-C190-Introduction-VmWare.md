@@ -300,7 +300,7 @@ L'exercice E02 vous permettra de tester vos connaissances sur VMware ESXi, vCent
 
 --- 
 
-# Sources
+# Sources Suite
 
 ## Web
 - https://geek-university.com/what-is-vcenter-server/

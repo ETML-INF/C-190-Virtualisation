@@ -1,10 +1,10 @@
-# Module ICT-190 - Mettre en place et exploiter une plateforme de virtualisation
+# Module C-190 - Mettre en place et exploiter une plateforme de virtualisation
 
 🔗 https://etml-inf.github.io/C-190-Virtualisation/
 
 ## Introduction
 
-Le module **ICT 190 - Virtualisation des Serveurs** a pour objectif d'enseigner aux étudiants la mise en place d’un environnement virtuel. À l’issue de ce module, les élèves seront capables de :
+Le module **C-190 - Virtualisation des Serveurs** a pour objectif d'enseigner aux étudiants la mise en place d’un environnement virtuel. À l’issue de ce module, les élèves seront capables de :
 - Décrire les principales techniques de virtualisation.
 - Installer et configurer des serveurs virtuels VMware.
 - Comprendre les implications métiers de la virtualisation.
@@ -12,7 +12,26 @@ Le module **ICT 190 - Virtualisation des Serveurs** a pour objectif d'enseigner 
 
 ![theorie-pratique](./b-UnitesEnseignement/Support/img/Picture1.png)
 
-Ce module se compose d'une partie théorique et d'un projet pratique réalisé en groupe.
+Ce module se compose **d'une partie théorique** et **d'un projet pratique** réalisé en groupe.
+
+> ℹ️ En plus de cela, ce module est également accompagné du P_SYS-190, un projet pratique sur HyperV qui se déroulera seul ou en groupe de 2. Ce projet est disponible dans la marketplace ETML. 
+
+# Organisation du module
+
+Le module se déroulera sur **8 à 9 semaines**, avec une alternance entre théorie et pratique. 
+
+| Semaine | Contenu | Liens théorie et exercices |
+|---------|---------|---------|
+| 1 | Identification du module et explications GitHub </br> Introduction </br> Théorie sur la virtualisation S01  </br> E01 </br> Théorie sur VMware S02 </br> Présentations par groupe </br> E02 |[🔗S01 - WEB](https://etml-inf.github.io/C-190-Virtualisation/S01-C190-Introduction.html)</br> [🔗E01 - PDF](https://etml-inf.github.io/C-190-Virtualisation/exercices/E01-C190-Introduction.pdf) </br> [🔗S02 - WEB](https://etml-inf.github.io/C-190-Virtualisation/S02-C190-Introduction-VmWare.html) </br> [🔗E02 - PDF](https://etml-inf.github.io/C-190-Virtualisation/exercices/E02-C190-Introduction-a-VmWare.pdf) |
+| 2 | Explication Infra ETML et prestataire </br> E03-Th + E03-Pra (Installation ESXi Physique & Nested) </br> **Rapport de validation E03**  |❌|
+| 3 | E04-Th + E04-Pra (Installation vCenter) </br> E05-Th + E05-Pra </br> **Rapport de validation E04** </br>  **Rapport de validation E05** </br> ⚠️ **EVAL 01** |❌|
+| 4 | E06 + E06-EtudeCout </br> E07-Th + E07-Pra </br> **Rapport de validation E07** |❌|
+| 5 | E08-Pra </br> ⚠️ **EVAL 02** </br> |❌|
+| 6-8 | Projet P_SYS-190 sur HyperV |❌|
+| 9 | **Rendu du projet P_SYS-190** </br> Remettre network LABO en état </br> Supprimer VMs chez prestataire. |❌|
+> ℹ️ ~~Ce planning peut être amené à changer.~~ Ce planning va très probablement bouger un peu. 
+
+
 
 # Contenu du module
 La théorie ainsi que les exercices se trouvent ici :
@@ -83,7 +102,7 @@ La théorie ainsi que les exercices se trouvent ici :
 
 
 ## 3. Projet P_SYS-190 - HyperV
-Le projet se déroulera sur 3 semaines. Les semaines 6 à 8.
+Le projet se déroulera sur 3 à 4 semaines. Les semaines 6-7 à 9.
 C'est un projet pratique sur HyperV qui se déroulera seul ou en groupe de 2.
 
 Le projet est disponible sur la marketplace. "*Mise en place d’une infrastructure virtualisée avec Windows Server Hyper-V*" 
@@ -105,20 +124,6 @@ Ce document vous sera remis au début de chaque exercice, et sera rendu à la fi
 
 
 
-# Organisation du module
-
-Le module se déroulera sur **8 semaines**, avec une alternance entre théorie et pratique.
-
-| Semaine | Contenu |
-|---------|---------|
-| 1 | Introduction + Théorie de la virtualisation + E01 |
-| 2 | VmWare + E02 & 03 + Rapport de validation  |
-| 3 | VmWare + E04 & E05 + **EVAL 01** + Rapport de validation |
-| 4 | Théorie + VmWare + E06 & 07 + Rapport de validation |
-| 5 | VmWare + E08 & 09 + **EVAL 02** + Rapport de validation |
-| 6-8 | Projet P_SYS-190 sur HyperV |
-
-
 # Conclusion
 
-Le module ICT-190 permet aux étudiants d'acquérir des compétences essentielles en virtualisation et en gestion de plateformes virtualisées. La combinaison de théorie, pratique et projet final assure une compréhension approfondie et une application concrète des concepts abordés.
+Le module C-190 permet aux étudiants d'acquérir des compétences essentielles en virtualisation et en gestion de plateformes virtualisées. La combinaison de théorie, pratique et projet final assure une compréhension approfondie et une application concrète des concepts abordés.
