@@ -4,9 +4,29 @@ theme: default
 paginate: true
 footer: "ETML - Module C190 - AGR"
 ---
-<!-- header: "C-190 - La virtualisation > Introduction" -->
+<!-- header: "C-190 - La virtualisation" -->
 # C-190 - La virtualisation
 
+---
+
+## A votre avis, c'est quoi ? 
+
+---
+
+
+# Plan du cours
+ - Introduction
+ - Historique
+ - Définition
+ - Intérêts
+ - Virtualisation de serveurs / machines
+ - Virtualisation par conteneur
+ - Cloud Computing
+ - Virtualisation de Réseaux
+ - Virtualisation de Stockage
+
+---
+<!-- header: "C-190 - La virtualisation > Introduction" -->
 ## Introduction
 
 La virtualisation est une technologie qui permet de créer des versions virtuelles de ressources informatiques telles que des serveurs, des systèmes de stockage et des réseaux. Elle permet de maximiser l'utilisation des ressources physiques et de réduire les coûts.
@@ -128,6 +148,11 @@ La virtualisation consiste à créer une version virtuelle (plutôt que réelle/
 - **Définition** : Abstraction des ressources de stockage physique pour les présenter comme un pool de stockage unique et logique.
 - **Avantages** : Gestion simplifiée, meilleure utilisation des ressources, flexibilité.
 - **Exemples** : VMware vSAN, Microsoft Storage Spaces, NetApp ONTAP.
+
+---
+
+# Exercice
+Effectuez l'exercice E01. 
 
 ---
 <!-- header: "C190 - La virtualisation > Sources" -->
