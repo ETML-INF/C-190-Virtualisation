@@ -25,7 +25,7 @@ Le module se déroulera sur **8 à 9 semaines**, avec une alternance entre théo
 | 1 | Identification du module et explications GitHub </br> Introduction </br> Théorie sur la virtualisation S01  </br> E01 </br> Théorie sur VMware S02 </br> Présentations par groupe </br> E02 |[🔗S01 - WEB](https://etml-inf.github.io/C-190-Virtualisation/S01-C190-Introduction.html)</br> [🔗E01 - PDF](https://etml-inf.github.io/C-190-Virtualisation/exercices/E01-C190-Introduction.pdf) </br> [🔗S02 - WEB](https://etml-inf.github.io/C-190-Virtualisation/S02-C190-Introduction-VmWare.html) </br> [🔗E02 - PDF](https://etml-inf.github.io/C-190-Virtualisation/exercices/E02-C190-Introduction-a-VmWare.pdf) |
 | 2 | Explication Infra ETML et prestataire </br> E03-Th + E03-Pra (Installation ESXi Physique & Nested) </br> **Rapport de validation E03**  |❌|
 | 3 | E04-Th + E04-Pra (Installation vCenter) </br> E05-Th + E05-Pra </br> **Rapport de validation E04** </br>  **Rapport de validation E05** </br> ⚠️ **EVAL 01** |❌|
-| 4 | E06 + E06-EtudeCout </br> E07-Th + E07-Pra </br> **Rapport de validation E07** |❌|
+| 4 | E06 + E06-EtudeCouts </br> E07-Th + E07-Pra </br> **Rapport de validation E07** |❌|
 | 🏖️ | <img src="./b-UnitesEnseignement/Support/img/im-on-vacation-danny-mullen.gif" width="100" height="100"> |🏖️|
 | 5 | E08-Pra </br> ⚠️ **EVAL 02** </br> |❌|
 | 6-8 | Projet P_SYS-190 sur HyperV |❌|
