@@ -160,13 +160,16 @@ La console web de ESXi ressemble à cela :
 
 
 ---
-
+<!-- header: "C-190 - VMWare > vCenter et vSphere" -->
 ## vCenter & vSphere, c'est quoi ? 
 
 **En résumé :**
 
 - vSphere est la plateforme de virtualisation de VMware.
 - vCenter et ESXi sont des composants de cette plateforme.
+  </br>
+>Dans l'exemple d'installation précédent nous avons uniquement installé ESXi. 
+>Et ESXi fait partie de la plateforme vSphere. 
 
 
 
@@ -235,40 +238,52 @@ vCenter Server Appliance (VCSA) est une machine virtuelle préconfigurée optimi
 ## Fonctionnalités avancées de VMware
 
 ### vMotion et Storage vMotion
-vMotion permet de migrer des machines virtuelles en cours d'exécution d'un hôte ESXi à un autre sans interruption de service. Storage vMotion permet de migrer les fichiers de disque virtuel d'un datastore à un autre.
+vMotion permet de migrer des machines virtuelles en cours d'exécution d'un hôte ESXi à un autre sans interruption de service. Storage vMotion permet de migrer les fichiers de disque virtuel d'un datastore à un autre. Lors d'une migration vMotion, il est possible de réaliser simultanément une migration Storage vMotion. Cependant, il est également possible d'effectuer une migration Storage vMotion sans effectuer de vMotion, et inversement.
 
 ### High Availability (HA)
-HA redémarre automatiquement les machines virtuelles sur un autre hôte en cas de défaillance de l'hôte.
+HA redémarre automatiquement les machines virtuelles sur un autre hôte en cas de défaillance de l'hôte. 
+>⚠️ HA n'utilise pas vMotion.
+
+---
+
+![bg fit](./img/tn-vmotion-vs-storagemotion.webp)
+[source image](https://www.vmware.com/products/cloud-infrastructure/vsphere/vmotion)
 
 ---
 
 ## Fonctionnalités avancées de VMware (suite)
 
 ### Distributed Resource Scheduler (DRS)
-DRS équilibre automatiquement la charge de travail entre les hôtes ESXi en fonction des ressources disponibles.
+DRS équilibre automatiquement la charge de travail (CPU & RAM) entre les hôtes ESXi en fonction des ressources disponibles. DRS utilise vMotion pour déplacer les machines virtuelles entre les hôtes.
 
 ### Fault Tolerance (FT)
 FT fournit une redondance continue pour les machines virtuelles critiques en créant une copie en temps réel sur un autre hôte.
 
+---
+
+## Fonctionnalités avancées de VMware (suite)
+
 ### Thin Provisioning
 Thin Provisioning permet une allocation dynamique de la capacité de stockage, optimisant ainsi l'utilisation des ressources de stockage.
+
+### DPM (Distributed Power Management)
+DPM permet de mettre en veille les hôtes ESXi inutilisés pour économiser de l'énergie. Les hôtes peuvent être réactivés automatiquement en cas de besoin.
+
+
+---
+
+### vSAN
+vSAN est une solution de stockage qui utilise le stockage local des hôtes ESXi pour créer un pool de stockage partagé et distribué.
+[source image](https://tsmith.co/2014/vsan-overview/)
+![bg right](./img/vmw-vsan-1024x768.jpg)
 
 ---
 
 ## Sécurité dans VMware
 
-### Meilleures pratiques de sécurité
-- Utiliser des mots de passe forts et des politiques de rotation des mots de passe.
-- Restreindre l'accès aux interfaces de gestion.
-- Activer les journaux d'audit pour surveiller les activités.
-
-### Gestion des utilisateurs et des permissions
-- Créer des rôles et des permissions personnalisés pour les utilisateurs.
-- Utiliser l'authentification à deux facteurs pour renforcer la sécurité.
-
-### Sécurisation des machines virtuelles et des hôtes
-- Appliquer les mises à jour de sécurité régulièrement.
-- Utiliser des pare-feu et des réseaux isolés pour protéger les machines virtuelles.
+- **VM Encryption** : chiffrement des machines virtuelles pour protéger les données sensibles.
+- **vSphere Trust Authority** : autorité de confiance pour la gestion des certificats et des clés de chiffrement.
+- **Authentification** : vCenter Server prend en charge l'authentification unique (SSO) et l'authentification à deux facteurs.
 
 ---
 
@@ -308,3 +323,5 @@ L'exercice E02 vous permettra de tester vos connaissances sur VMware ESXi, vCent
 ## Images 
 - https://www.parkplacetechnologies.com/blog/vmware-vsphere-vs-vcenter-vs-esxi/
 - https://geek-university.com/what-is-vcenter-server/
+- https://www.vmware.com/products/cloud-infrastructure/vsphere/vmotion
+- https://tsmith.co/2014/vsan-overview/

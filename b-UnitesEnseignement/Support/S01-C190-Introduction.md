@@ -117,7 +117,7 @@ La virtualisation consiste à créer une version virtuelle (plutôt que réelle/
 
 - **Définition** : Méthode de virtualisation au niveau du système d'exploitation permettant d'exécuter plusieurs applications isolées dans des conteneurs en réutilisant le même noyau (kernel) du système hôte.
 - **Avantages** : Légèreté, rapidité de déploiement, portabilité.
-- **Exemples** : Docker, Kubernetes, LXC.
+- **Exemples** : Docker, Kubernetes, LXC, Podman.
 
 ---
 
