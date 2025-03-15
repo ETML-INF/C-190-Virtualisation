@@ -24,6 +24,7 @@ footer: "ETML - Module C190 - AGR"
  - Cloud Computing
  - Virtualisation de Réseaux
  - Virtualisation de Stockage
+ - Popek & Goldberg
 
 ---
 <!-- header: "C-190 - La virtualisation > Introduction" -->
@@ -151,6 +152,31 @@ La virtualisation consiste à créer une version virtuelle (plutôt que réelle/
 
 ---
 
+<!-- header: "C-190 - La virtualisation > Popek et Goldberg" -->
+## Popek et Goldberg
+
+Robert P. Goldberg et Gerald J. Popek sont deux informaticiens célèbres pour leurs travaux sur la virtualisation dans les années 1970. Ils ont défini des critères formels pour qu'une architecture informatique puisse supporter la virtualisation.
+
+---
+
+<!-- header: "C-190 - La virtualisation > Popek et Goldberg" -->
+### Les trois postulats de Popek et Goldberg
+
+1. **Equivalence / Fidélité** : Un programme s'exécutant sous une machine virtuelle doit se comporter de manière identique à son exécution sur une machine physique équivalente.
+2. **Contrôle des ressources / Sécurité** : L'hyperviseur doit avoir un contrôle complet des ressources virtualisées (p.ex de la machine virtuelle).
+3. **Efficacité / Performance** : La majorité des instructions de la machine virtuelle doivent être exécutées directement par le processeur sans intervention de l'hyperviseur.
+
+---
+
+<!-- header: "C-190 - La virtualisation > Popek et Goldberg" -->
+### Importance des postulats
+
+Les postulats de Popek et Goldberg sont fondamentaux pour la conception des hyperviseurs modernes. Ils assurent que les machines virtuelles peuvent fonctionner efficacement et de manière fiable, tout en permettant une gestion optimale des ressources.
+
+---
+
+
+<!-- header: "C-190 - La virtualisation > E01 " -->
 # Exercice
 Effectuez l'exercice E01. 
 
@@ -159,6 +185,7 @@ Effectuez l'exercice E01.
 # Sources
 ## Web
 - https://fr.wikipedia.org/wiki/Virtualisation
+- https://en.wikipedia.org/wiki/Popek_and_Goldberg_virtualization_requirements
 
 ## Images 
 - https://fr.wikipedia.org/wiki/Virtualisation

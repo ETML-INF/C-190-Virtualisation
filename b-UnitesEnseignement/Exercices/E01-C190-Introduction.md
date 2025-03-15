@@ -6,6 +6,14 @@ Date : _______________
 
 ---
 
+**📌 Instructions :**
+- Complétez cette fiche d'exercices en répondant directement dans les espaces vides.
+- Pour les QCM, cochez la case correcte `[x]`.
+- Pour les vrais ou faux, entourez ou cochez la bonne réponse.
+- Remettez votre copie une fois terminée.
+
+---
+
 ## 1️⃣ Questions ouvertes (Répondez en développant vos réponses)
 
 ### ❓ 1. Expliquez avec vos mots ce qu'est la virtualisation.
@@ -21,6 +29,7 @@ _(Réponse développée, minimum 3 lignes)_
 
 ### ❓ 2. Quels sont les intérêts de la virtualisation ?
 _(Citez au moins 3 avantages)_
+
 
 <textarea rows="15" cols="100"></textarea>
 
@@ -130,14 +139,6 @@ _(Complétez le tableau en indiquant "SaaS", "PaaS" ou "IaaS")_
 | Microsoft Azure App Service | _______________ |
 | Dropbox         | _______________ |
 | Kubernetes     | _______________ |
-
----
-
-**📌 Instructions :**
-- Complétez cette fiche d'exercices en répondant directement dans les espaces vides.
-- Pour les QCM, cochez la case correcte `[x]`.
-- Pour les vrais ou faux, entourez ou cochez la bonne réponse.
-- Remettez votre copie une fois terminée.
 
 ---
 

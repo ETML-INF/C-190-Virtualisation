@@ -6,6 +6,14 @@ Date : _______________
 
 ---
 
+**📌 Instructions :**
+- Complétez cette fiche d'exercices en répondant directement dans les espaces vides.
+- Pour les QCM, cochez la case correcte `[x]`.
+- Pour les vrais ou faux, entourez ou cochez la bonne réponse.
+- Remettez votre copie une fois terminée.
+
+---
+
 ## 1️⃣ Questions ouvertes (Répondez en développant vos réponses)
 
 ### ❓ 1. Quelle est la différence entre ESX et ESXi ?
@@ -45,13 +53,14 @@ _(Réponse développée, minimum 3 lignes)_
 
 ---
 
-### ❓ 5. Quel est l'encombrement de l'image de l'hyperviseur ESXi 7.0 ?  
+### ❓ 5. Quel est l'encombrement de l'image de l'hyperviseur ESXi 7.0 ?  (Valeur la plus proche)
 
 
 - [ ] 100 Mo  
 - [ ] 150 Mo  
-- [ ] 300 Mo  
-- [ ] 500 Mo  
+- [ ] 200 Mo  
+- [ ] 300 Mo
+- [ ] 500 Mo    
 
 ---
 
@@ -63,7 +72,7 @@ _(Réponse développée, minimum 3 lignes)_
 
 ---
 
-### ❓ 7. Quelle fonctionnalité permet de faire une migration à chaud ?  
+### ❓ 7. Quelles fonctionnalités permettent de faire une migration à chaud d'une machine virtuelle manuellement et/ou automatiquemnent ?  
 
 
 - [ ] Storage vMotion  
@@ -108,13 +117,5 @@ _(Indiquez "X" dans la colonne appropriée)_
 | FT                |          |    |            |               |          |
 | Secure Boot       |          |    |            |               |          |
 
-
----
-
-**📌 Instructions :**
-- Complétez cette fiche d'exercices en répondant directement dans les espaces vides.
-- Pour les QCM, cochez la case correcte `[x]`.
-- Pour les vrais ou faux, entourez ou cochez la bonne réponse.
-- Remettez votre copie une fois terminée.
 
 ---
