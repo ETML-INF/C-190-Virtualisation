@@ -38,9 +38,9 @@ La gestion des licences est un aspect crucial de l'utilisation des produits VMwa
 ---
 
 ### Single Host ESXi
-C'était une licence gratuite pour un seul hôte ESXi. Elle a été supprimée en 2023 par Broadcom. 
+C'est une licence gratuite pour un seul hôte ESXi. ~~Elle a été supprimée en 2023 par Broadcom.~~ Broadcom a décidé de la remettre pour ESXi 8.x en début 2025. 
 
-> J'utilisais cette licence dans mon HomeLab. Aujourd'hui je vous conseille de tester Proxmox si vous souhaitez monter un homelab.
+> J'utilise cette licence dans mon HomeLab. Aujourd'hui je vous conseille de tester également Proxmox si vous souhaitez monter un homelab.
 
 ---
 
