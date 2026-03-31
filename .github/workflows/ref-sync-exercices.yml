@@ -1,0 +1,63 @@
+name: (Ref) TARDIS - Sync exercices PDF
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - "b-UnitesEnseignement/Exercices/*.pdf"
+      - ".github/workflows/ref-sync-exercices.yml"
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      ICT_MODULE: ${{ vars.ICT_MODULE }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Generate index.html for exercices
+        run: |
+          set -euo pipefail
+          EXO_DIR="b-UnitesEnseignement/Exercices"
+          EXO_ITEMS=""
+          for f in "$EXO_DIR"/*.pdf; do
+            [ -f "$f" ] || continue
+            name="$(basename "$f")"
+            EXO_ITEMS+="<li class='bg-gray-800 p-4 rounded-lg'><a href='${name}' target='_blank' class='text-amber-400 hover:underline font-bold'>📕 ${name}</a></li>"
+          done
+
+          cat > "$EXO_DIR/index.html" << HTMLEOF
+          <!DOCTYPE html>
+          <html lang="fr">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Module ${ICT_MODULE} – Exercices</title>
+            <script src="https://cdn.tailwindcss.com"></script>
+          </head>
+          <body class="bg-gray-900 text-white font-sans p-6">
+            <div class="max-w-4xl mx-auto">
+              <h1 class="text-3xl font-bold mb-2 text-center">Module ${ICT_MODULE}</h1>
+              <p class="text-center text-gray-400 mb-8">Section INF – Exercices</p>
+              <ul class="space-y-3">${EXO_ITEMS}</ul>
+              <p class="mt-8 text-center text-sm text-gray-500">Généré automatiquement · ETML Section INF</p>
+            </div>
+          </body>
+          </html>
+          HTMLEOF
+
+      - name: Sync exercices + index via FTP
+        uses: ETML-INF/tardis-pipelines/.github/actions/ftp-sync@main
+        with:
+          local-dir:     b-UnitesEnseignement/Exercices/
+          ictroot-dir:   ${{ vars.ICT_ROOT_FOLDER }}
+          ictmodule-dir: ${{ env.ICT_MODULE }}
+          custom-dir:    ${{ vars.FTP_EXO_DIR }}
+          state-name:    ".ftp-sync-exercices.json"
+          log-level:     "minimal"
+          timeout:       "300000"
+          ftp-server:    ${{ vars.FTP_SERVER }}
+          ftp-username:  ${{ secrets.FTP_USERNAME }}
+          ftp-password:  ${{ secrets.FTP_PASSWORD }}

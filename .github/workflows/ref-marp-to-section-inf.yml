@@ -1,0 +1,121 @@
+name: (Ref) TARDIS - Build marp presentations
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - "b-UnitesEnseignement/Presentations/**"
+      - ".github/workflows/ref-marp-to-section-inf.yml"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      ICT_MODULE: ${{ vars.ICT_MODULE }}
+    steps:
+      - name: Check ICT_MODULE
+        run: |
+          if [ -z "${ICT_MODULE}" ]; then
+            echo "::error::ICT_MODULE non défini (must be set to C190)"
+            exit 1
+          fi
+
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          path: caller
+
+      - name: Checkout tardis-pipelines (themes)
+        uses: actions/checkout@v4
+        with:
+          repository: ETML-INF/tardis-pipelines
+          ref: main
+          path: pipelines
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install marp-cli
+        run: npm i -g @marp-team/marp-cli
+
+      - name: Build slides (HTML + PDF) and generate index.html
+        run: |
+          set -euo pipefail
+          SRC_DIR="caller/b-UnitesEnseignement/Presentations"
+          OUT="$SRC_DIR/dist/html"
+          mkdir -p "$OUT"
+
+          THEME_ROOT="pipelines/themes/marp"
+          THEME_DIR="$THEME_ROOT/etml-2025"
+
+          mkdir -p "$OUT/style"
+          cp -r "$THEME_DIR" "$OUT/style/"
+          [ -d "$SRC_DIR/assets" ] && cp -r "$SRC_DIR/assets" "$OUT/assets"
+
+          shopt -s nullglob
+          FILES=($SRC_DIR/*.md)
+          SLIDE_ITEMS=""
+          for f in "${FILES[@]}"; do
+            base="$(basename "${f%.md}")"
+            marp "$f" --html --allow-local-files --theme-set "$THEME_ROOT" --output "$OUT/$base.html"
+            marp "$f" --pdf  --allow-local-files --theme-set "$THEME_ROOT" --output "$OUT/$base.pdf"
+            SLIDE_ITEMS+="<li class='bg-gray-800 p-4 rounded-lg flex items-center justify-between'><span class='font-bold text-white'>${base}</span><div class='flex gap-3'><a href='${base}.html' target='_blank' class='text-blue-400 hover:underline font-bold'>📄 HTML</a> <a href='${base}.pdf' target='_blank' class='text-green-400 hover:underline font-bold'>📕 PDF</a></div></li>"
+          done
+
+          cat > "$OUT/index.html" << HTMLEOF
+          <!DOCTYPE html>
+          <html lang="fr">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Module ${ICT_MODULE} – Présentations</title>
+            <script src="https://cdn.tailwindcss.com"></script>
+          </head>
+          <body class="bg-gray-900 text-white font-sans p-6">
+            <div class="max-w-4xl mx-auto">
+              <h1 class="text-3xl font-bold mb-2 text-center">Module ${ICT_MODULE}</h1>
+              <p class="text-center text-gray-400 mb-8">Section INF – Présentations</p>
+              <ul class="space-y-3">${SLIDE_ITEMS}</ul>
+              <p class="mt-8 text-center text-sm text-gray-500">Généré automatiquement avec MARP · ETML Section INF</p>
+            </div>
+          </body>
+          </html>
+          HTMLEOF
+
+      - name: Upload slides artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: slides-site
+          path: caller/b-UnitesEnseignement/Presentations/dist/html/**
+          if-no-files-found: error
+          retention-days: 7
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    env:
+      ICT_MODULE: ${{ vars.ICT_MODULE }}
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: slides-site
+          path: site/
+
+      - name: Sync presentations via FTP
+        uses: ETML-INF/tardis-pipelines/.github/actions/ftp-sync@main
+        with:
+          local-dir:     site/
+          ictroot-dir:   ${{ vars.ICT_ROOT_FOLDER }}
+          ictmodule-dir: ${{ env.ICT_MODULE }}
+          custom-dir:    ${{ vars.FTP_PRESENTATIONS_DIR }}
+          state-name:    ".ftp-sync-deck.json"
+          log-level:     "minimal"
+          timeout:       "300000"
+          ftp-server:    ${{ vars.FTP_SERVER }}
+          ftp-username:  ${{ secrets.FTP_USERNAME }}
+          ftp-password:  ${{ secrets.FTP_PASSWORD }}
