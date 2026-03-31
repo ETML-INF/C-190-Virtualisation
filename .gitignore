@@ -1,0 +1,10 @@
+*.exe
+*.zip
+*.iso
+*.code-workspace
+
+# Claude / Superpowers
+docs/superpowers/
+.claude/
+
+b-UnitesEnseignement/Exercices/index.html
