@@ -3,13 +3,13 @@ name: Build and Deploy All MARP Presentations
 on:
   push:
     paths:
-      - 'b-UnitesEnseignement/Support/*.md'  
-      - 'b-UnitesEnseignement/Support/img/**'  
-      - 'b-UnitesEnseignement/Exercices/*.pdf'  
+      - 'b-UnitesEnseignement/Presentations/*.md'
+      - 'b-UnitesEnseignement/Presentations/img/**'
+      - 'b-UnitesEnseignement/Exercices/*.pdf'
   pull_request:
     paths:
-      - 'b-UnitesEnseignement/Support/*.md'
-      - 'b-UnitesEnseignement/Support/img/**'
+      - 'b-UnitesEnseignement/Presentations/*.md'
+      - 'b-UnitesEnseignement/Presentations/img/**'
       - 'b-UnitesEnseignement/Exercices/*.pdf'
 
 permissions:
@@ -37,11 +37,11 @@ jobs:
           mkdir -p public/exercices
 
           echo "🔍 Vérification des fichiers avant la copie..."
-          ls -l b-UnitesEnseignement/Support/img/ || echo "📂 Aucune image trouvée"
+          ls -l b-UnitesEnseignement/Presentations/img/ || echo "📂 Aucune image trouvée"
           ls -l b-UnitesEnseignement/Exercices/ || echo "📂 Aucun exercice trouvé"
 
           echo "📂 Copie des images..."
-          cp -r b-UnitesEnseignement/Support/img/* public/img/ 2>/dev/null || echo "⚠️ Aucune image copiée"
+          cp -r b-UnitesEnseignement/Presentations/img/* public/img/ 2>/dev/null || echo "⚠️ Aucune image copiée"
 
           echo "📂 Copie des exercices PDF..."
           cp b-UnitesEnseignement/Exercices/*.pdf public/exercices/ 2>/dev/null || echo "⚠️ Aucun exercice PDF copié"
@@ -63,7 +63,7 @@ jobs:
               <h1 class='text-3xl font-bold mb-4 text-center'>Liste des Présentations</h1>
               <ul class='space-y-3'>" > public/index.html
 
-          for file in b-UnitesEnseignement/Support/*.md; do
+          for file in b-UnitesEnseignement/Presentations/*.md; do
             filename=$(basename "$file" .md)
 
             marp "$file" --html --allow-local-files --output "public/${filename}.html"
@@ -77,7 +77,6 @@ jobs:
 
           echo "</ul>" >> public/index.html
 
-          # Ajout de la section "Liste des Exercices"
           echo "<h2 class='text-2xl font-bold mt-8 text-center'>Liste des Exercices</h2>
                 <ul class='space-y-3'>" >> public/index.html
 
